@@ -28,7 +28,9 @@ const ArticleListPage = props => {
         <td>{hit.num_comments || 0}</td>
         <td>{hit.points || 0}</td>
         <td><i className="material-icons">arrow_drop_up</i></td>
-        <td>{hit.title || hit.story_title || ""}({hit.story_url}) by {hit.author} {hit.created_at} <span>[Hide]</span></td>
+        <td>{hit.title || hit.story_title || ""}
+          {hit.story_url && (<span>{hit.story_url}</span>)}
+        by {hit.author} {hit.created_at} <span>[Hide]</span></td>
       </tr>
     ));
   };
