@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Link } from "react-router-dom";
 import PropTypes from 'prop-types'; // ES6
 import { fetchArticles } from '../actions';
 import ArticleDetailModal from '../components/ArticleDetailModal';
@@ -38,7 +38,9 @@ const HomePage = props => {
         </div>
         <div className="divider" />
         <div className="section">
-
+          <p>
+            Visit <Link to="news/1">news</Link> page to get all news
+            </p>
         </div>
       </div>
     </div>

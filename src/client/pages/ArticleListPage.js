@@ -105,10 +105,10 @@ const ArticleListPage = props => {
           <li className={`${parseInt(match.params.id) <= 1 ? "disabled" : ""}`}>
             {parseInt(match.params.id) <= 1 ?
               null :
-              <><Link to={`/articles/${parseInt(match.params.id) - 1}`}>Previous</Link>|</>}
+              <><Link to={`/news/${parseInt(match.params.id) - 1}`}>Previous</Link>|</>}
 
           </li>
-          <li className="waves-effect"><Link to={`/articles/${parseInt(match.params.id) + 1}`}>Next</Link></li>
+          <li className="waves-effect"><Link to={`/news/${parseInt(match.params.id) + 1}`}>Next</Link></li>
         </ul>
       </div>
       <Chart chartData={chartData}></Chart>

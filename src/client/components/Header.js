@@ -42,7 +42,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/articles/1" className="item" onClick={toggleMenu}>
+                <Link to="/news/1" className="item" onClick={toggleMenu}>
                   News
                 </Link>
               </li>
@@ -50,7 +50,7 @@ const Header = () => {
             </ul>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
               <li>
-                <Link to="/articles/1" className="item">
+                <Link to="/news/1" className="item">
                   News
                 </Link>
               </li>

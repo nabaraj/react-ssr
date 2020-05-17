@@ -13,7 +13,7 @@ export default [
         exact: true
       },
       {
-        path: '/articles/:id',
+        path: '/news/:id',
         component: ArticleListPage
       },
       {
