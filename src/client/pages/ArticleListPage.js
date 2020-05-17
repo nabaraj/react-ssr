@@ -61,11 +61,6 @@ const ArticleListPage = props => {
         }
 
       });
-
-      // let oldChartData = [chartData, ...Object.values(chartObject)];
-      // setLoader(false);
-      console.log('chartObject ', chartObject);
-
       setChartData(Object.values(chartObject));
     }
   }, [props.articles.hits, props.upVoteObject])
@@ -73,16 +68,16 @@ const ArticleListPage = props => {
   const renderArticles = () => {
     return props.articles.hits.map(hit => {
       let upvote = props.upVoteObject && props.upVoteObject[hit.objectID] ? props.upVoteObject[hit.objectID] : 0;
-      // console.log('upvote', upvote, props.upVote[hit.objectID], props.upVote, hit.objectID);
+
       let upVoteColor = (upvote < 100 && upvote > 50) ? "maroon" : upvote > 99 ? "orange" : "black"
-      return <tr key={hit.objectID} className={`${props.hiddenList.indexOf(hit.objectID) !== -1 ? "hide" : ""}`}>
+      return (<tr key={hit.objectID} className={`${props.hiddenList.indexOf(hit.objectID) !== -1 ? "hide" : ""}`}>
         <td className="center-align">{hit.num_comments || 0}</td>
         <td className="center-align" style={{ "color": upVoteColor }}>{upvote}</td>
         <td><span style={styleObject.curserPointer} onClick={() => upVote(hit.objectID)}><i className="material-icons">arrow_drop_up</i></span></td>
         <td><span style={styleObject.contentStyle}>{hit.title || hit.story_title || ""}</span>
           {hit.story_url && (<a style={styleObject.tableLink} className="tableLink" target="_blank" href={hit.story_url}>{shortenUrl(hit.story_url)}</a>)}
         by {hit.author} <span style={styleObject.grayColor}>{timeDiff(hit.created_at)}</span> <span style={styleObject.curserPointer} onClick={() => hideRow(hit.objectID)}>[Hide]</span></td>
-      </tr>
+      </tr>)
 
 
     }
@@ -90,7 +85,6 @@ const ArticleListPage = props => {
   };
 
   const TableStructure = () => {
-    console.log("asdf asdf", props.articles.currentPage)
     return <div>
       <table className="striped responsive-table">
         <thead>

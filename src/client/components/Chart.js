@@ -7,14 +7,9 @@ import {
     XAxis,
     YAxis,
     CartesianGrid,
-    Tooltip,
-    Label,
-    AreaChart,
-    Legend,
-    Text
+    Label
 } from "recharts";
 export default function Chart(props) {
-    console.log('chart', props.chartData);
 
     return (
         <div className={`line-chart-wrapper`} style={{ "height": "300px" }}>

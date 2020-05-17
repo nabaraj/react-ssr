@@ -27,7 +27,7 @@ export default (state = initialState, action) => {
         loadingNews: action.payload
       })
     case HIDE_ROW:
-      // console.log('HIDE_ROW');
+
       let localItems = window.localStorage.getItem("hiddenItems");
       localItems = localItems ? localItems.split(',').map(i => Number(i)) : [];
       localItems.push(action.payload);
