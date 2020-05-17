@@ -20,25 +20,7 @@ const HomePage = props => {
     setModal(false);
   };
 
-  const renderArticles = () => {
-    return props.articles.map(article => (
-      <div className="col s12 m6 l6 xl4" key={article.title}>
-        <div className="card large">
-          <div className="card-image">
-            <LazyLoadImage alt={article.title} src={article.urlToImage} />
-          </div>
-          <div className="card-content">
-            <span className="card-title">{article.title}</span>
-          </div>
-          <div className="card-action">
-            <a href="javascript:void(0)" onClick={() => readArticle(article)}>
-              Read More
-            </a>
-          </div>
-        </div>
-      </div>
-    ));
-  };
+
 
   const { fetchArticles: loadArticles } = props;
 
@@ -52,11 +34,11 @@ const HomePage = props => {
       {modal ? <ArticleDetailModal handler={closeModal} data={currentArticle} /> : null}
       <div className="row">
         <div className="section">
-          <h3>Popular Articles</h3>
+          <h3>Home</h3>
         </div>
         <div className="divider" />
         <div className="section">
-          <div className="row">{renderArticles()}</div>
+
         </div>
       </div>
     </div>
