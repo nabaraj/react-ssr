@@ -59,7 +59,7 @@ const config = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, '_redirects.txt')
+          from: path.resolve(__dirname, '_redirects')
         },
       ]
     })
