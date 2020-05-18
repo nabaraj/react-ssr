@@ -68,7 +68,7 @@ const ArticleListPage = props => {
 
       let upVoteColor = (upvote < 100 && upvote > 50) ? "maroon" : upvote > 99 ? "orange" : "black"
 
-      return (<tr key={hit.objectID} className={`${props.hiddenList.indexOf(hit.objectID) !== -1 ? "hide" : ""}`}>
+      return (<tr key={hit.objectID} className={`${props.hiddenList.indexOf(hit.objectID) !== -1 ? "hide" : ""} row-${hit.objectID}`}>
         <td className="center-align">{hit.num_comments || 0}</td>
         <td className="center-align" style={{ "color": upVoteColor }}>{upvote}</td>
         <td><span style={styleObject.curserPointer} onClick={() => upVote(hit.objectID)}><i className="material-icons">arrow_drop_up</i></span></td>

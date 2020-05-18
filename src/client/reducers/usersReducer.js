@@ -2,6 +2,8 @@ import { FETCH_ARTICLES, LOADING_ARTICLES, HIDE_ROW, UP_VOTE } from '../actions/
 let localHidenItems = window.localStorage.getItem("hiddenItems");
 let localUpVote = window.localStorage.getItem("upVoteObject");
 
+console.log(localHidenItems, localUpVote);
+
 const initialState = {
   hits: [],
   nbPages: 0,
