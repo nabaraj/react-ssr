@@ -2,9 +2,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import PropTypes from 'prop-types';
-import ArticleDetailModal from '../components/ArticleDetailModal';
 import { fetchArticles, hideRow, upVote } from '../actions';
 import { Link } from "react-router-dom";
 import { shortenUrl, timeDiff } from "./../../utils";
@@ -70,6 +67,7 @@ const ArticleListPage = props => {
       let upvote = props.upVoteObject && props.upVoteObject[hit.objectID] ? props.upVoteObject[hit.objectID] : 0;
 
       let upVoteColor = (upvote < 100 && upvote > 50) ? "maroon" : upvote > 99 ? "orange" : "black"
+
       return (<tr key={hit.objectID} className={`${props.hiddenList.indexOf(hit.objectID) !== -1 ? "hide" : ""}`}>
         <td className="center-align">{hit.num_comments || 0}</td>
         <td className="center-align" style={{ "color": upVoteColor }}>{upvote}</td>
