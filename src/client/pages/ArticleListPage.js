@@ -27,7 +27,7 @@ const styleObject = {
 const ArticleListPage = props => {
   const [chartData, setChartData] = useState([]);
   const { articles, match } = props;
-  const category = props && articles[0] && articles[0].source.name;
+
 
   const { fetchArticles: loadArticles } = props;
   const hideRow = function (id) {
