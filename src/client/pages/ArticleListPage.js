@@ -88,7 +88,7 @@ const ArticleListPage = props => {
               {hit.title || hit.story_title || ""}
             </span>
             {hit.story_url && (<a style={styleObject.tableLink} className="tableLink" target="_blank" href={hit.story_url}>{shortenUrl(hit.story_url)}</a>)}
-        by {hit.author} <span style={styleObject.grayColor}>{timeDiff(hit.created_at)}</span> <span style={styleObject.curserPointer} onClick={() => hideRow(hit.objectID)}>[Hide]</span></td>
+        by {hit.author} <span style={styleObject.grayColor}>{timeDiff(hit.created_at)} ago </span> <span style={styleObject.curserPointer} onClick={() => hideRow(hit.objectID)}>[Hide]</span></td>
         </tr>)
       }
 
