@@ -87,7 +87,7 @@ const ArticleListPage = props => {
               style={styleObject.contentStyle}>
               {hit.title || hit.story_title || ""}
             </span>
-            {hit.story_url && (<a style={styleObject.tableLink} className="tableLink" target="_blank" href={hit.story_url}>{shortenUrl(hit.story_url)}</a>)}
+            {hit.story_url && (<a style={styleObject.tableLink} className="tableLink" target="_blank" href={hit.story_url}> {shortenUrl(hit.story_url)} </a>)}
         by {hit.author} <span style={styleObject.grayColor}>{timeDiff(hit.created_at)} ago </span> <span style={styleObject.curserPointer} onClick={() => hideRow(hit.objectID)}>[Hide]</span></td>
         </tr>)
       }
@@ -99,7 +99,7 @@ const ArticleListPage = props => {
   };
 
   const TableStructure = () => {
-    return <div>
+    return (<div>
       <table className="striped responsive-table">
         <thead>
           <tr>
@@ -126,7 +126,7 @@ const ArticleListPage = props => {
         </ul>
       </div>
       <Chart chartData={chartData}></Chart>
-    </div>
+    </div>)
   }
 
 
