@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const merge = require('webpack-merge');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
@@ -54,6 +55,13 @@ const config = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebPackPlugin({
       template: './public/index.html'
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, '_redirects.txt')
+        },
+      ]
     })
   ]
 };
