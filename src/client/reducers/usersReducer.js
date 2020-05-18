@@ -2,14 +2,13 @@ import { FETCH_ARTICLES, LOADING_ARTICLES, HIDE_ROW, UP_VOTE } from '../actions/
 let localHidenItems = window.localStorage.getItem("hiddenItems");
 let localUpVote = window.localStorage.getItem("upVoteObject");
 
-console.log(localHidenItems, localUpVote);
 
 const initialState = {
   hits: [],
   nbPages: 0,
   currentPage: 0,
   loadingNews: false,
-  hiddenItems: localHidenItems ? localHidenItems.split(',').map(i => Number(i)) : [],
+  hiddenItems: localHidenItems ? localHidenItems.split(',') : [],
   upVote: localUpVote ? JSON.parse(localUpVote) : {},
 }
 
@@ -29,7 +28,6 @@ export default (state = initialState, action) => {
         loadingNews: action.payload
       })
     case HIDE_ROW:
-
       let localItems = window.localStorage.getItem("hiddenItems");
       localItems = localItems ? localItems.split(',').map(i => Number(i)) : [];
       localItems.push(action.payload);
@@ -39,7 +37,6 @@ export default (state = initialState, action) => {
         hiddenItems: [...state.hiddenItems, action.payload]
       })
     case UP_VOTE:
-
       let upVoteLocal = window.localStorage.getItem("upVoteObject");
       upVoteLocal = upVoteLocal ? JSON.parse(upVoteLocal) : {};
       upVoteLocal = increaseItem(upVoteLocal, action.payload);
